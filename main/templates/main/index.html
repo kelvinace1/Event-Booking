@@ -1,0 +1,29 @@
+
+{% extends 'main/base.html' %}
+
+{% block content %}
+  <div class="jumbotron text-center">
+    <h1 class="display-4">Welcome to Ace Event Booking Platform</h1>
+    <p class="lead">Discover and book exciting events near you!</p>
+    <hr class="my-4">
+    <p>Explore a world of events and secure your tickets today.</p>
+    <a class="btn btn-primary btn-lg" href="{% url "events" %}" role="button">Browse Events</a>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h2>Easy Booking</h2>
+        <p>Book your tickets with a few clicks and enjoy a hassle-free experience.</p>
+      </div>
+      <div class="col-md-4">
+        <h2>Diverse Events</h2>
+        <p>From concerts to conferences, we have a wide range of events for every taste.</p>
+      </div>
+      <div class="col-md-4">
+        <h2>Secure Payments</h2>
+        <p>Rest easy with our secure payment options for your ticket purchases.</p>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,19 @@
+/* static/css/styles.css */
+
+body {
+    padding-top: 56px;
+  }
+  
+  .jumbotron {
+    background-color: #343a40;
+    color: #fff;
+  }
+  
+  .container {
+    margin-top: 40px;
+  }
+  
+  .col-md-4 {
+    margin-bottom: 20px;
+  }
+  

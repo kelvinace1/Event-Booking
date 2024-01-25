@@ -1,0 +1,59 @@
+{% extends "main/base.html" %}
+
+{% load i18n %}
+{% load allauth account %}
+
+{% block head_title %}
+    {% trans "Sign In" %}
+{% endblock head_title %}
+
+{% block content %}
+    {% element h1 %}
+        {% trans "Sign In" %}
+    {% endelement %}
+    <p>
+        {% blocktrans %}If you have not created an account yet, then please
+        <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
+    </p>
+    {% url 'account_login' as login_url %}
+    {% element form form=form method="post" action=login_url tags="entrance,login" %}
+        {% slot body %}
+            {% csrf_token %}
+            
+            {# Email Field #}
+            <div class="form-group">
+                <label for="{{ form.email.id_for_label }}">{{ form.email.label_tag }}</label>
+                {{ form.email }}
+            </div>
+            
+            {# Password Field #}
+            <div class="form-group">
+                <label for="{{ form.password.id_for_label }}">{{ form.password.label_tag }}</label>
+                {{ form.password }}
+            </div>
+
+            {# Remember Me Checkbox #}
+            <div class="form-check">
+                {{ form.remember }}
+                {{ form.remember.label_tag }}
+                <label class="form-check-label" for="{{ form.remember.id_for_label }}">Remember me</label>
+            </div>
+
+            {# Display Additional Fields as Needed #}
+
+            {% if redirect_field_value %}
+                <input type="hidden"
+                       name="{{ redirect_field_name }}"
+                       value="{{ redirect_field_value }}" />
+            {% endif %}
+        {% endslot %}
+        {% slot actions %}
+            {% element button type="submit" tags="prominent,login" %}
+                {% trans "Sign In" %}
+            {% endelement %}
+        {% endslot %}
+    {% endelement %}
+    {% if SOCIALACCOUNT_ENABLED %}
+        {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
+    {% endif %}
+{% endblock content %}

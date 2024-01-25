@@ -1,0 +1,24 @@
+<!-- events/templates/events/booking_success.html -->
+
+{% extends 'main/base.html' %}
+
+{% block content %}
+  <h2>Booking Successful</h2>
+  <p>Your booking for {{ ticket.event }} -  has been successful.</p>
+  <p>Total Amount: ${{ ticket.price }} - </p> 
+  <p>Quantity: {{ booking.quantity }} </p>
+  <p>Total Price: {{total}} </p>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        iframe.src = "{% url 'download_ticket' booking.id %}";
+        document.body.appendChild(iframe);
+        setTimeout(function() {
+            document.body.removeChild(iframe);
+        }, 500);
+    });
+</script>
+  
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+  {% if ticket.quantity_available > 0 %}
+  <h2>Book Tickets for {{ event.title }}</h2>
+  <h3>{{ ticket.ticket_type }} - ${{ ticket.price }}</h3>
+  <h3> Wallet Balance: {{ account.account.balance }} </h3>
+  <p> Quantity available: {{ ticket.quantity_available }} </p></h5>
+
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Book Tickets</button>
+    {% else %}
+    <h2>No Tickets Available</h2>
+    {% endif %}
+  </form>
+{% endblock %}

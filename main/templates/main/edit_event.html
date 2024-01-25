@@ -1,0 +1,47 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+  <div class="container mt-5">
+    <div class="card">
+      <div class="card-header">
+        <h2 class="mb-0">Create an Event</h2>
+      </div>
+      <div class="card-body">
+        <form method="post">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="{{ event_form.title.id_for_label }}">Event Title:</label>
+            {{ event_form.title }}
+          </div>
+          <div class="form-group">
+            <label for="{{ event_form.description.id_for_label }}">Event Description:</label>
+            {{ event_form.description }}
+          </div>
+          <div class="form-group">
+            <label for="{{ event_form.date.id_for_label }}">Event Date and Time:</label>
+            {{ event_form.date }}
+          </div>
+          <div class="form-group">
+            <label for="{{ event_form.location.id_for_label }}">Event Location:</label>
+            {{ event_form.location }}
+          </div>
+          <hr>
+          <h4 class="mb-3">Ticket Details</h4>
+          <div class="form-group">
+            <label for="{{ ticket_form.ticket_type.id_for_label }}">Ticket Type:</label>
+            {{ ticket_form.ticket_type }}
+          </div>
+          <div class="form-group">
+            <label for="{{ ticket_form.price.id_for_label }}">Ticket Price:</label>
+            {{ ticket_form.price }}
+          </div>
+          <div class="form-group">
+            <label for="{{ ticket_form.quantity_available.id_for_label }}">Quantity Available:</label>
+            {{ ticket_form.quantity_available }}
+          </div>
+          <button type="submit" class="btn btn-primary">Create Event</button>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}
