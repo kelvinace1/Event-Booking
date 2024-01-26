@@ -26,18 +26,21 @@ Facilitate communication between organizers and attendees through our messaging 
 
 **2. notifications and reminder system**
 
-**Getting Started
-Prerequisites
-Python installed
-Django installed
-PostgreSQL or MySQL database
-Installation
-Clone the repository: git clone https://github.com/kelvinace1/Event-Booking.git
-Navigate to the project directory: cd events
-Install dependencies: pip install -r requirements.txt
-Set up the database: Configure your database connection in the settings.py file.
-Apply migrations: python manage.py migrate
-Create a superuser: python manage.py createsuperuser
-Start the development server: python manage.py runserver
-Open your browser and visit http://localhost:8000 to access the web app.
+## Getting Started
+
+### Prerequisites
+
+**- Python installed**
+**- Django installed**
+**- PostgreSQL or MySQL database**
+
+### Installation
 **
+1. Clone the repository: `git clone https://github.com/kelvinace1/Event-Booking.git`  **
+**2. Navigate to the project directory: `cd events` ** 
+**3. Install dependencies: `pip install -r requirements.txt`  **
+**4. Set up the database: Configure your database connection in the `settings.py` file.  **
+**5. Apply migrations: `python manage.py migrate`  **
+**6. Create a superuser: `python manage.py createsuperuser`  **
+**7. Start the development server: `python manage.py runserver` ** 
+**8. Open your browser and visit `http://localhost:8000` to access the web app.**
